@@ -1,0 +1,35 @@
+{
+  "name": "api_agenda",
+  "version": "1.0.0",
+  "description": "API para agenda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagovinhote/api_agenda.git"
+  },
+  "author": "Thiago Vinhote",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagovinhote/api_agenda/issues"
+  },
+  "homepage": "https://github.com/thiagovinhote/api_agenda#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.9",
+    "nodemailer": "^4.4.1",
+    "nodemailer-express-handlebars": "^2.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "nodemon": "^1.14.11"
+  }
+}
