@@ -16,6 +16,10 @@ const UserSchema = new mongoose.Schema({
     required: true,
     select: false,
   },
+  events: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event',
+  }],
   createAt: {
     type: Date,
     default: Date.now,
