@@ -67,17 +67,12 @@ router.put('/:_id', async (req, res) => {
   const { _id } = req.params;
 
   try {
-    var event = await Event.findById(_id);
+    const event = await Event.findByIdAndUpdate(_id, {
+      '$set': req.body,
+    }, { new: true });
 
     if (!event)
       return res.status(400).send({ error: 'Event not found.' });
-
-
-    await Event.findByIdAndUpdate(_id, {
-      '$set': req.body,
-    });
-
-    event = await Event.findOne({ _id });
 
     return res.send(event);
   } catch (e) {
