@@ -9,7 +9,6 @@ router.use(authMiddleware);
 router.get('/', async (req, res) => {
   const { userId } = req;
   try {
-    console.log(userId);
     const events = await Event.find({ user: userId });
 
     return res.send(events);
