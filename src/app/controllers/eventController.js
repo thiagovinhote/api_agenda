@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
       filter.dateHour = date;
     }
 
-    let events = await Event.find(filter);
+    const events = await Event.find(filter);
 
     return res.send(events);
   } catch (e) {
