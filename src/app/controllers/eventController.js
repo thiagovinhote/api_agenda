@@ -1,4 +1,5 @@
 const express = require('express');
+const moment = require('moment');
 
 const Event = require('../models/event');
 const authMiddleware = require('../middlewares/auth');
@@ -13,7 +14,11 @@ router.get('/', async (req, res) => {
     const filter = { user: userId };
     
     if (date) {
-      filter.dateHour = date;
+      var tomorrow = moment(date).add(1, 'days');
+      filter.dateHour = {
+        $gte: date,
+        $lt: tomorrow.toDate()
+      }
     }
 
     const events = await Event.find(filter);

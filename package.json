@@ -23,6 +23,7 @@
     "express": "^4.16.2",
     "fs": "0.0.1-security",
     "jsonwebtoken": "^8.1.0",
+    "moment": "^2.20.1",
     "mongoose": "^4.13.9",
     "nodemailer": "^4.4.1",
     "nodemailer-express-handlebars": "^2.0.0",
