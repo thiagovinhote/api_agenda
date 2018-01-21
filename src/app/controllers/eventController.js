@@ -9,7 +9,14 @@ router.use(authMiddleware);
 router.get('/', async (req, res) => {
   const { userId } = req;
   try {
-    const events = await Event.find({ user: userId });
+    const { date } = req.query;
+    const filter = { user: userId };
+    
+    if (date) {
+      filter.dateHour = date;
+    }
+
+    let events = await Event.find(filter);
 
     return res.send(events);
   } catch (e) {
