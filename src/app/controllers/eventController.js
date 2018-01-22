@@ -64,8 +64,8 @@ router.post('/', async (req, res) => {
   const { body, userId } = req;
 
   try {
-    const event = { ...body, user: userId };
-    const event = await Event.create(event);
+    const item = { ...body, user: userId };
+    const event = await Event.create(item);
 
     return res.send(event);
   } catch (e) {
