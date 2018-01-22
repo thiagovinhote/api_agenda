@@ -61,10 +61,11 @@ router.delete('/:_id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const { body } = req;
+  const { body, userId } = req;
 
   try {
-    const event = await Event.create(body);
+    const event = { ...body, user: userId };
+    const event = await Event.create(event);
 
     return res.send(event);
   } catch (e) {
